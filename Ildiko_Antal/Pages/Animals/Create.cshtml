@@ -1,0 +1,57 @@
+﻿@page
+@model Ildiko_Antal.Pages.Animals.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Animale</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Animale.nume" class="control-label"></label>
+                <input asp-for="Animale.nume" class="form-control" />
+                <span asp-validation-for="Animale.nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animale.regim" class="control-label"></label>
+                <input asp-for="Animale.regim" class="form-control" />
+                <span asp-validation-for="Animale.regim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animale.altedetalii" class="control-label"></label>
+                <input asp-for="Animale.altedetalii" class="form-control" />
+                <span asp-validation-for="Animale.altedetalii" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animale.checkin" class="control-label"></label>
+                <input asp-for="Animale.checkin" class="form-control" />
+                <span asp-validation-for="Animale.checkin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animale.SpecieID" class="control-label"></label>
+                <select asp-for="Animale.SpecieID" class ="form-control" asp-items="ViewBag.SpecieID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Animale.AdapostID" class="control-label"></label>
+                <select asp-for="Animale.AdapostID" class ="form-control" asp-items="ViewBag.AdapostID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
